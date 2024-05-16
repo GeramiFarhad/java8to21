@@ -35,13 +35,13 @@ public class Exercise1 {
 //        extractDuplicateElementsFromArray();
 //        duplicateCharactersInString();
 //        findFirstRepeatedCharacterInString();
-//        findFirstNoneRepeatedCharacterInString();
+        findFirstNoneRepeatedCharacterInString();
 //        fibonacciSeries();
 //        firstTenOddNumbers();
 //        getLastElementOfAnArray();
 
 
-        findAgeOfPersonWithGivenBirthDate();
+//        findAgeOfPersonWithGivenBirthDate();
 
     }
 
@@ -97,7 +97,7 @@ public class Exercise1 {
         String inputString = "Java Concept Of The Day";
 
         Optional<Map.Entry<String, Long>> key = Arrays.stream(inputString.toLowerCase().split(""))
-                .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
+                .collect(Collectors.groupingBy(/*Function.identity()*/str -> str, LinkedHashMap::new, Collectors.counting()))
                 .entrySet().stream().filter(entry -> entry.getValue() == 1).findFirst();
 
         key.ifPresent(stringLongEntry -> System.out.println(stringLongEntry.getKey()));
