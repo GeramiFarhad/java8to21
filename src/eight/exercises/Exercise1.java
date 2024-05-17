@@ -21,7 +21,7 @@ public class Exercise1 {
 //        mergeTwoUnsortedArraysIntoOneSortedWithoutDuplicates();
 //        threeMaxAndThreeMinNumbersInAList();
 //        anagramStrings();
-//        findSumOfDigitsOfANumber();
+        findSumOfDigitsOfANumber();
 //        secondLargestNumberInArray();
 //        sortStringListByTheirLength();
 //        findCommonElementsInTwoArrays();
@@ -35,7 +35,7 @@ public class Exercise1 {
 //        extractDuplicateElementsFromArray();
 //        duplicateCharactersInString();
 //        findFirstRepeatedCharacterInString();
-        findFirstNoneRepeatedCharacterInString();
+//        findFirstNoneRepeatedCharacterInString();
 //        fibonacciSeries();
 //        firstTenOddNumbers();
 //        getLastElementOfAnArray();
@@ -216,7 +216,7 @@ public class Exercise1 {
     private static void findSumOfDigitsOfANumber() {
         int a = 15623;
 
-        int sum = Stream.of(String.valueOf(a).split("")).mapToInt(Integer::new).sum();
+        int sum = Stream.of(String.valueOf(a).split("")).mapToInt(Integer::valueOf).sum();
         System.out.println(sum);
     }
 
