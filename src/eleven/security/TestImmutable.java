@@ -8,10 +8,10 @@ import java.util.ArrayList;
     private final int numEmployees;
     private final ArrayList<String> employees; // mutable
 
-    private Department(String name, String address, int numEmpolyees, ArrayList<String> employees) {
+    private Department(String name, String address, int numEmployees, ArrayList<String> employees) {
         this.name = name;
         this.address = address;
-        this.numEmployees = numEmpolyees;
+        this.numEmployees = numEmployees;
 //        this.employees = employees; // this line breaks encapsulation. because this.employees refer to
                                     // an ArrayList taken from outside.
 //        Main Output:
@@ -29,8 +29,8 @@ import java.util.ArrayList;
 //        Any Change?: Department{name='PH', address='somewhere', numEmployees=2, employees=[A, B]}
     }
 
-    public static Department createNewInstance(String name, String address, int numEmpolyees, ArrayList<String> employees) {
-        return new Department(name, address, numEmpolyees, employees);
+    public static Department createNewInstance(String name, String address, int numEmployees, ArrayList<String> employees) {
+        return new Department(name, address, numEmployees, employees);
     }
 
     public String getName() {
