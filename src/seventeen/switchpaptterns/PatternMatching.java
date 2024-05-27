@@ -23,6 +23,7 @@ public class PatternMatching {
     }
 
     public static void whatType(Object o) {
+/*
         switch (o) {
             // since Java 16 there is Pattern matching for instanceof. it introduces new language enhancements that enables
             // you to conditionally extract data from objects with code.
@@ -32,6 +33,7 @@ public class PatternMatching {
             case null -> System.out.println("Null");
             default -> System.out.println("Not Recognized");
         }
+*/
     }
 
     public static void infoOnType(Object o) {
