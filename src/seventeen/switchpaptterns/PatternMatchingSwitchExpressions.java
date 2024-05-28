@@ -22,7 +22,7 @@ public class PatternMatchingSwitchExpressions {
         if (v instanceof Car c) {
             // since Java 16 there is Pattern matching for instanceof. it introduces new language enhancements that enables
             // you to conditionally extract data from objects with code.
-            // note the 'c' here
+            // note the 'c' here, this is called "type pattern"
             System.out.println("It is a Car: " + c.onRoad());
         } else if (v instanceof Boat) {
             System.out.println("It is a Boat");

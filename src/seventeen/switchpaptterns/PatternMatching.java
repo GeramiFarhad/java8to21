@@ -27,7 +27,7 @@ public class PatternMatching {
         switch (o) {
             // since Java 16 there is Pattern matching for instanceof. it introduces new language enhancements that enables
             // you to conditionally extract data from objects with code.
-            // note the 's' and 'i' here
+            // note the 's' and 'i' here. this is called "type pattern"
             case String s -> System.out.println("String");
             case Integer i -> System.out.println("Integer");
             case null -> System.out.println("Null");
