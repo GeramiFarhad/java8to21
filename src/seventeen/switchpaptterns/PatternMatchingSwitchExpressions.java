@@ -34,7 +34,6 @@ public class PatternMatchingSwitchExpressions {
     }
 
     public static void patternMatchingSwitch(Vehicle v) {
-/*
         switch (v) {
             case Car c -> {
                 System.out.println("PatMat: some logic1");
@@ -45,7 +44,6 @@ public class PatternMatchingSwitchExpressions {
             case Train t -> System.out.println("PatMat: It is a Train");
             default -> throw new IllegalArgumentException();
         }
-*/
     }
 
     public static void main(String[] args) {

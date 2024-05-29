@@ -2,7 +2,7 @@ package seventeen.switchpaptterns;
 
 public class PatternMatching {
     // as PatternMatching is a preview feature,
-    // and it is not covered in java21
+    // and it is not covered in java21. (it is finalized in java 21. read twentyone.patternmatching)
     // you should set language level to:
     // 17 (Preview) - Pattern matching for switch
 
@@ -23,7 +23,6 @@ public class PatternMatching {
     }
 
     public static void whatType(Object o) {
-/*
         switch (o) {
             // since Java 16 there is Pattern matching for instanceof. it introduces new language enhancements that enables
             // you to conditionally extract data from objects with code.
@@ -33,17 +32,18 @@ public class PatternMatching {
             case null -> System.out.println("Null");
             default -> System.out.println("Not Recognized");
         }
-*/
     }
 
     public static void infoOnType(Object o) {
-/*
         switch (o) {
-            case String s && s.startsWith("A") -> System.out.println("String beginning with A: " + s.startsWith("A") + " " + s);
-            case Integer i && i.intValue() > 10 -> System.out.println("Integer > 10 : " + i);
+            // with java 17:
+//            case String s && s.startsWith("A") -> System.out.println("String beginning with A: " + s.startsWith("A") + " " + s);
+//            case Integer i && i.intValue() > 10 -> System.out.println("Integer > 10 : " + i);
+            // with java 21:
+            case String s when s.startsWith("A") -> System.out.println("String beginning with A: " + s.startsWith("A") + " " + s);
+            case Integer i when i > 10 -> System.out.println("Integer > 10 : " + i);
             case null -> System.out.println("Null");
             default -> System.out.println("Not Recognized");
         }
-*/
     }
 }
