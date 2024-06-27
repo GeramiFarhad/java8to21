@@ -45,7 +45,7 @@ public class Exercise1 {
 
     }
 
-    private static void findAgeOfPersonWithGivenBirthDate() {
+    public static void findAgeOfPersonWithGivenBirthDate() {
         LocalDate birthDay = LocalDate.of(1986, 3, 30);
 
         LocalDate now = LocalDate.now();
@@ -53,7 +53,7 @@ public class Exercise1 {
         System.out.println(ChronoUnit.YEARS.between(birthDay, now));
     }
 
-    private static void getLastElementOfAnArray() {
+    public static void getLastElementOfAnArray() {
         List<String> listOfStrings = Arrays.asList("One", "Two", "Three", "Four", "Five", "Six");
 
         String s1 = listOfStrings.stream().skip(listOfStrings.size() - 1).findFirst().orElse("");
@@ -66,12 +66,12 @@ public class Exercise1 {
 
     }
 
-    private static void firstTenOddNumbers() {
+    public static void firstTenOddNumbers() {
         IntStream.rangeClosed(0, 9).map(number -> 2 * number + 1).forEach(System.out::println);
 
     }
 
-    private static void fibonacciSeries() {
+    public static void fibonacciSeries() {
         Stream.iterate(new int[]{0, 1}, f -> new int[]{f[1], f[0] + f[1]})
                 .limit(10)
                 .map(f -> f[0])
@@ -93,7 +93,7 @@ public class Exercise1 {
 
     }
 
-    private static void findFirstNoneRepeatedCharacterInString() {
+    public static void findFirstNoneRepeatedCharacterInString() {
         String inputString = "Java Concept Of The Day";
 
         Optional<Map.Entry<String, Long>> key = Arrays.stream(inputString.toLowerCase().split(""))
@@ -103,7 +103,7 @@ public class Exercise1 {
         key.ifPresent(stringLongEntry -> System.out.println(stringLongEntry.getKey()));
     }
 
-    private static void findFirstRepeatedCharacterInString() {
+    public static void findFirstRepeatedCharacterInString() {
         String inputString = "Java Concept Of The Day";
 
         Set<String> characters = new HashSet<>();
@@ -111,7 +111,7 @@ public class Exercise1 {
         System.out.println(s);
     }
 
-    private static void duplicateCharactersInString() {
+    public static void duplicateCharactersInString() {
         String inputString = "Java Concept Of The Day";
 
         Set<String> characters = new HashSet<>();
@@ -120,7 +120,7 @@ public class Exercise1 {
         System.out.println(strings);
     }
 
-    private static void extractDuplicateElementsFromArray() {
+    public static void extractDuplicateElementsFromArray() {
         List<Integer> listOfIntegers = Arrays.asList(111, 222, 333, 111, 555, 333, 777, 222);
 
         List<Integer> integers = listOfIntegers.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
@@ -135,7 +135,7 @@ public class Exercise1 {
 //        System.out.println(duplicateElements);
     }
 
-    private static void findStringStartingWithANumber() {
+    public static void findStringStartingWithANumber() {
         List<String> listOfStrings = Arrays.asList("One", "2wo", "3hree", "Four", "5ive", "Six");
 
         List<String> strings = listOfStrings.stream().filter(item -> Character.isDigit(item.charAt(0))).toList();
@@ -143,7 +143,7 @@ public class Exercise1 {
         System.out.println(strings);
     }
 
-    private static void palindromeProgram() {
+    public static void palindromeProgram() {
         String str = "ROTATOR";
 
         boolean isItPalindrome = IntStream.range(0, str.length() / 2).
@@ -152,18 +152,18 @@ public class Exercise1 {
         System.out.println("str: " + str + " is" + (isItPalindrome ? "" : " not") + " palindrome");
     }
 
-    private static void mostRepeatedElementInArray() {
+    public static void mostRepeatedElementInArray() {
         List<String> listOfStrings = Arrays.asList("Pen", "Eraser", "Note Book", "Pen", "Pencil", "Pen", "Note Book", "Pencil");
 
         listOfStrings.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
                 .entrySet().stream().max((a, b) -> (int) (a.getValue() - b.getValue())).ifPresent(entry -> System.out.println(entry.getKey()));
     }
 
-    private static void firstTenEvenNumbers() {
+    public static void firstTenEvenNumbers() {
         IntStream.rangeClosed(1, 10).map(number -> number * 2).forEach(System.out::println);
     }
 
-    private static void reverseAnIntegerArray() {
+    public static void reverseAnIntegerArray() {
         int[] array = new int[]{5, 1, 7, 3, 9, 6};
 
         int[] ints = IntStream.rangeClosed(1, array.length).map(index -> array[array.length - index]).toArray();
@@ -171,19 +171,19 @@ public class Exercise1 {
         Arrays.stream(ints).forEach(System.out::println);
     }
 
-    private static void sumOfFirstTenNaturalNumbers() {
+    public static void sumOfFirstTenNaturalNumbers() {
         int sum = IntStream.range(1, 11).sum();
         System.out.println(sum);
     }
 
-    private static void reverseEachWordInAString() {
+    public static void reverseEachWordInAString() {
         String str = "Java Concept Of The Day";
 
         String collect = Arrays.stream(str.split(" ")).map(part -> new StringBuilder(part).reverse()).collect(Collectors.joining(" "));
         System.out.println(collect);
     }
 
-    private static void findCommonElementsInTwoArrays() {
+    public static void findCommonElementsInTwoArrays() {
         List<Integer> list1 = Arrays.asList(71, 21, 34, 89, 56, 28, 28);
 
         List<Integer> list2 = Arrays.asList(12, 56, 17, 21, 94, 34);
@@ -199,28 +199,28 @@ public class Exercise1 {
         System.out.println(integers);
     }
 
-    private static void sortStringListByTheirLength() {
+    public static void sortStringListByTheirLength() {
         List<String> listOfStrings = Arrays.asList("Java", "Python", "C#", "HTML", "Kotlin", "C++", "COBOL", "C");
 
         List<String> strings = listOfStrings.stream().sorted(Comparator.comparingInt(String::length)).toList();
         System.out.println(strings);
     }
 
-    private static void secondLargestNumberInArray() {
+    public static void secondLargestNumberInArray() {
         List<Integer> listOfIntegers = Arrays.asList(45, 12, 56, 15, 24, 75, 31, 89);
         Integer integer = listOfIntegers.stream().sorted(Comparator.reverseOrder()).skip(1).findFirst().orElse(0);
 
         System.out.println(integer);
     }
 
-    private static void findSumOfDigitsOfANumber() {
+    public static void findSumOfDigitsOfANumber() {
         int a = 15623;
 
         int sum = Stream.of(String.valueOf(a).split("")).mapToInt(Integer::valueOf).sum();
         System.out.println(sum);
     }
 
-    private static void anagramStrings() {
+    public static void anagramStrings() {
         String s1 = "RaceCar";
         String s2 = "CarRace";
 
@@ -230,7 +230,7 @@ public class Exercise1 {
         System.out.println("s1: " + s1 + " and s2: " + s2 + " are " + (collect1.equalsIgnoreCase(collect2) ? "" : "not ") + "anagrams");
     }
 
-    private static void threeMaxAndThreeMinNumbersInAList() {
+    public static void threeMaxAndThreeMinNumbersInAList() {
         List<Integer> listOfIntegers = Arrays.asList(45, 12, 56, 15, 24, 75, 31, 89);
 
         List<Integer> collectMin = listOfIntegers.stream().sorted().limit(3).collect(Collectors.toList());
@@ -240,7 +240,7 @@ public class Exercise1 {
         System.out.println(collectMax);
     }
 
-    private static void mergeTwoUnsortedArraysIntoOneSortedWithoutDuplicates() {
+    public static void mergeTwoUnsortedArraysIntoOneSortedWithoutDuplicates() {
         int[] a = new int[]{4, 2, 5, 1};
 
         int[] b = new int[]{8, 1, 9, 5};
@@ -250,7 +250,7 @@ public class Exercise1 {
 
     }
 
-    private static void mergeTwoUnsortedArraysIntoOneSorted() {
+    public static void mergeTwoUnsortedArraysIntoOneSorted() {
         int[] a = new int[]{4, 2, 7, 1};
 
         int[] b = new int[]{8, 3, 9, 5};
@@ -260,7 +260,7 @@ public class Exercise1 {
     }
 
 
-    private static void joinStringList() {
+    public static void joinStringList() {
         List<String> listOfStrings = Arrays.asList("Facebook", "Twitter", "YouTube", "WhatsApp", "LinkedIn");
 
         String s = listOfStrings.stream().reduce("", (a, b) -> a + "[" + b + "], ");
@@ -269,7 +269,7 @@ public class Exercise1 {
         String collect = listOfStrings.stream().collect(Collectors.joining(",", "[", "]"));
     }
 
-    private static void sortNumbersInReverse() {
+    public static void sortNumbersInReverse() {
         List<Double> decimalList = Arrays.asList(12.45, 23.58, 17.13, 42.89, 33.78, 71.85, 56.98, 21.12);
 
         decimalList.sort(Comparator.reverseOrder());
@@ -277,28 +277,28 @@ public class Exercise1 {
         System.out.println(decimalList);
     }
 
-    private static void elementFrequencyInList() {
+    public static void elementFrequencyInList() {
         List<String> stationeryList = Arrays.asList("Pen", "Eraser", "Note Book", "Pen", "Pencil", "Stapler", "Note Book", "Pencil");
         Map<String, Long> collect = stationeryList.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
         System.out.println(collect);
     }
 
-    private static void characterFrequencyInString() {
+    public static void characterFrequencyInString() {
         String inputString = "Java Concept Of The Day";
 
         Map<String, Long> collect = Arrays.stream(inputString.split("")).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         System.out.println(collect);
     }
 
-    private static void removeDuplicateElements() {
+    public static void removeDuplicateElements() {
         List<String> listOfStrings = Arrays.asList("Java", "Python", "C#", "Java", "Kotlin", "Python");
 
         List<String> strings = listOfStrings.stream().distinct().toList();
         System.out.println(strings);
     }
 
-    private static void separateOddAndEvenNumbers() {
+    public static void separateOddAndEvenNumbers() {
         List<Integer> listOfIntegers = Arrays.asList(71, 18, 42, 21, 67, 32, 95, 14, 56, 87);
 
         Map<Boolean, List<Integer>> collect = listOfIntegers.stream().collect(Collectors.groupingBy(number -> number % 2 == 0));
